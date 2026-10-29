@@ -86,3 +86,65 @@ def bfs(graph, start, goal):
 
 
 bfs(graph, 'A', 'H')
+```
+
+### OUTPUT:
+
+```text
+BFS: Hospital Navigation
+Start: A | Goal: H
+
+Step 1: Node = A
+ Queue: []
+ A -> B: Added to queue
+ A -> C: Added to queue
+ Visited: ['A', 'B', 'C']
+
+Step 2: Node = B
+ Queue: ['C']
+ B -> A: Already visited
+ B -> D: Added to queue
+ B -> E: Added to queue
+ Visited: ['A', 'B', 'C', 'D', 'E']
+
+Step 3: Node = C
+ Queue: ['D', 'E']
+ C -> A: Already visited
+ C -> E: Already visited
+ Visited: ['A', 'B', 'C', 'D', 'E']
+
+Step 4: Node = D
+ Queue: ['E']
+ D -> B: Already visited
+ D -> G: Added to queue
+ Visited: ['A', 'B', 'C', 'D', 'E', 'G']
+
+Step 5: Node = E
+ Queue: ['G']
+ E -> B: Already visited
+ E -> C: Already visited
+ E -> F: Added to queue
+ Visited: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+
+Step 6: Node = G
+ Queue: ['F']
+ G -> D: Already visited
+ G -> H: Added to queue
+ Visited: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+
+Step 7: Node = F
+ Queue: ['H']
+ F -> E: Already visited
+ F -> H: Already visited
+ Visited: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+
+Step 8: Node = H
+ Queue: []
+ Goal reached!
+
+--- Final Result ---
+Traversal order: A -> B -> C -> D -> E -> G -> F -> H
+Shortest path : A -> B -> D -> G -> H
+Path cost     : 4 corridors
+Nodes explored : 8
+```
